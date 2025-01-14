@@ -1,5 +1,4 @@
 ﻿function solution(A: number[]): number {
-
   let length: number = A.length;
   let firstPart: number = A[0];
   let secondPart: number = 0;
