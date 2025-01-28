@@ -1,9 +1,29 @@
 ﻿function solution(A: number[]): number {
-  let positives = A.filter((a) => a > 0);
-  positives.sort();
+    const positives: number[] = A.select(x => x);
+    positives.sort();
 
-  let missing: number = 1;
-  let length: number = A.length;
+    let missing: number = 1;
 
-  return missing;
+    for (let index = 0; index < positives.length; index++) {
+        if (index == 0) {
+            if (positives[index] > 1) {
+                missing = 1;
+                break;
+            }
+            else {
+                missing = 2;
+            }
+        }
+        else {
+            if (positives[index] - 1 > positives[index - 1]) {
+                missing = positives[index - 1] + 1;
+                break;
+            }
+            else {
+                missing = positives[index] + 1;
+            }
+        }
+    }
+
+    return missing;
 }
