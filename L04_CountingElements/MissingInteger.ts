@@ -1,6 +1,6 @@
 ﻿function solution(A: number[]): number {
-    const positives: number[] = A.select(x => x);
-    positives.sort();
+    const positives: number[] = A.filter((number: number) => number > 0);
+    positives.sort((first: number, second: number) => first - second);
 
     let missing: number = 1;
 
